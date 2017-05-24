@@ -7,21 +7,20 @@ var settings = {
 };
 
 $.ajax(settings).done(function (data) {
-    //console.log(data);
-    
-    $("#titleGallery").append("'"+ data.photos.photo[0].title + "' - Flickr Gallery");
+    $("#titleGallery").append("Flickr Gallery");
     for (var i = 0; i < 6; i++) {
         var gp = data.photos.photo[i];
         
+        var title = gp.title;
         var farmId = gp.farm;
         var serverId = gp.server;
         var id = gp.id;
         var secret = gp.secret;
 
-        //console.log(farmId + ", " + serverId + ", " + id + ", " + secret);
-
-        //  https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
-
-        $("#flickrGallery").append('<img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg"/>');           
+        $("#flickrGallery").append("<div class='flickrPhoto'>" +
+            "<img src='https://farm" + farmId + ".staticflickr.com/" + serverId + "/" + id + "_" + secret + ".jpg'/>" +
+            "<p class='flickrSubtitle'>" + title + "</p>" +
+            "<hr>"+
+            "</div >");           
     }    
 });

@@ -1,5 +1,15 @@
-img {
-    max-height:150px; 
-    margin:3px; 
-    border:1px solid #fefefe;
+#titleGallery, .flickrPhoto {
+    text-align: center;
+}
+
+.flickrPhoto {
+    margin: 3px;
+}
+
+.flickrPhoto img {    
+    border:1px solid #000;
+}
+
+.flickrSubtitle {
+    font-size: 18px;
 }
