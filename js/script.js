@@ -1,7 +1,7 @@
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=24de00e7e4e35d259296d8ed2a48a92e&gallery_id=66911286-72157679773554794&format=json&nojsoncallback=1&api_sig=cf81da09b30ced930ddbe0cf49062986",
+    "url": "https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=ee340aa511182130949104c7cfc6c119&gallery_id=66911286-72157679773554794&format=json&nojsoncallback=1",
     "method": "GET",
     "headers": {}
 };
@@ -20,7 +20,7 @@ $.ajax(settings).done(function (data) {
         $("#flickrGallery").append("<div class='flickrPhoto'>" +
             "<img src='https://farm" + farmId + ".staticflickr.com/" + serverId + "/" + id + "_" + secret + ".jpg'/>" +
             "<p class='flickrSubtitle'>" + title + "</p>" +
-            "<hr>"+
+            "<hr>"+   
             "</div >");           
     }    
 });
